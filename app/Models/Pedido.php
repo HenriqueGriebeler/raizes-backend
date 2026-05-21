@@ -6,5 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pedido extends Model
 {
-    //
+    protected $fillable = [
+        'cliente_id',
+        'status',
+        'canal_pedido',
+        'total'
+    ];
+
+    public function itens()
+    {
+        return $this->hasMany(PedidoItem::class);
+    }
+
+    public function pagamento()
+{
+    return $this->hasOne(Pagamento::class);
+}
+
 }
