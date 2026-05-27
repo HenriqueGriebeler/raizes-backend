@@ -2,7 +2,6 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
-
 use Illuminate\Foundation\Configuration\Middleware;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -17,13 +16,23 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
 
-    $exceptions->render(function (
-        \Illuminate\Auth\AuthenticationException $e,
-        $request
-    ) {
-        return response()->json([
-            'message' => 'Não autenticado'
-        ], 401);
-    });
+        $exceptions->render(function (
+            Throwable $e,
+            $request
+        ) {
 
-})->create();
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ], 500);
+        });
+
+        $exceptions->render(function (
+            \Illuminate\Auth\AuthenticationException $e,
+            $request
+        ) {
+            return response()->json([
+                'message' => 'Não autenticado'
+            ], 401);
+        });
+    })->create();

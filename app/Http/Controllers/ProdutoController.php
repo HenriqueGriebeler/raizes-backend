@@ -7,12 +7,23 @@ use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
-    public function index()
-    {
-        return response()->json(
-            Produto::with('unidade')->paginate(10)
+    public function index(Request $request)
+{
+    $query = Produto::with('unidade');
+
+    if ($request->nome) {
+
+        $query->where(
+            'nome',
+            'like',
+            '%' . $request->nome . '%'
         );
     }
+
+    return response()->json(
+        $query->paginate(10)
+    );
+}
 
     public function store(Request $request)
     {
