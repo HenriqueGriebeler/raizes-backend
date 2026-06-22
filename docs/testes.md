@@ -68,7 +68,6 @@ Entrada: POST /api/produtos
 }
 
 Resultado esperado: 201 Created
-Produto cadastrado
 
 CT06 - Criar pedido com itens válidos
 
@@ -89,7 +88,7 @@ Entrada: POST /api/pedidos
 
 Resultado esperado: 201 Created
 Pedido criado
-Total calculado corretamente
+
 
 CT07 - Bloqueio por estoque insuficiente
 
