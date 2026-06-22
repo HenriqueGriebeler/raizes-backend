@@ -1,0 +1,247 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "postman_raizes_backend",
+    "version": "1.0.0",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8000"
+    }
+  ],
+  "paths": {
+    "/api/register": {
+      "post": {
+        "summary": "http://127.0.0.1:8000/api/register",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password": {
+                    "type": "string",
+                    "format": "color"
+                  }
+                }
+              },
+              "example": {
+                "name": "henriqueG",
+                "email": "henriqueg@email.com",
+                "password": "123456"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/login": {
+      "post": {
+        "summary": "http://127.0.0.1:8000/api/login",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password": {
+                    "type": "string",
+                    "format": "color"
+                  }
+                }
+              },
+              "example": {
+                "email": "henriqueg@email.com",
+                "password": "123456"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/unidades": {
+      "post": {
+        "summary": "http://127.0.0.1:8000/api/unidades",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "endereco": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "nome": "Unidade Centro",
+                "endereco": "Rua Ramiro Barcelos, Centro, RS, Montenegro, 2201"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/produtos": {
+      "post": {
+        "summary": "http://127.0.0.1:8000/api/produtos",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "preco": {
+                    "type": "number"
+                  },
+                  "estoque": {
+                    "type": "integer"
+                  },
+                  "unidade_id": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "example": {
+                "nome": "Café clássico Premium",
+                "preco": 14.9,
+                "estoque": 50,
+                "unidade_id": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pedidos": {
+      "post": {
+        "summary": "http://127.0.0.1:8000/api/pedidos",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cliente_id": {
+                    "type": "integer"
+                  },
+                  "canal_pedido": {
+                    "type": "string"
+                  },
+                  "itens": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "produto_id": {
+                          "type": "integer"
+                        },
+                        "quantidade": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "cliente_id": 1,
+                "canal_pedido": "APP",
+                "itens": [
+                  {
+                    "produto_id": 1,
+                    "quantidade": 2
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pedidos/2/pagamento": {
+      "post": {
+        "summary": "http://127.0.0.1:8000/api/pagamento",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "metodo": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "metodo": "PIX"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

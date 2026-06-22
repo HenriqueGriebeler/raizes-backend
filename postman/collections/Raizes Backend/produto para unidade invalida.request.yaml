@@ -1,0 +1,21 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api/produtos
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"nome\": \"Produto Inválido\",\r
+
+    \  \"preco\": 15.90,\r
+
+    \  \"estoque\": 20,\r
+
+    \  \"unidade_id\": 999\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgyMDk5MTIwLCJleHAiOjE3ODIxMDI3MjAsIm5iZiI6MTc4MjA5OTEyMCwianRpIjoiSUdTODVaS3pyZTZsSzVQbiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.K7o63GiDxMX5o9yL5P5J6nRlb_7_aqRnDgsytWKVi9k
+order: 4503595185472899

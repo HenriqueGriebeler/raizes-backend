@@ -1,0 +1,30 @@
+$kind: http-request
+name: http://127.0.0.1:8000/api/pedidos
+url: http://127.0.0.1:8000/api/pedidos
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"cliente_id\": 1,\r
+
+    \  \"canal_pedido\": \"APP\",\r
+
+    \  \"itens\": [\r
+
+    \    {\r
+
+    \      \"produto_id\": 1,\r
+
+    \      \"quantidade\": 2\r
+
+    \    }\r
+
+    \  ]\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgyMDk0OTUyLCJleHAiOjE3ODIwOTg1NTIsIm5iZiI6MTc4MjA5NDk1MiwianRpIjoiMjFTdWc3UTNWVjdWblR0SSIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.bQ6ORHSkf8tb67q0OKCG4USd6pzGs29_XH7lWIvrMrM
+order: 4501767761064026

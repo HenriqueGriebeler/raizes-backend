@@ -1,0 +1,17 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api/unidades
+method: GET
+body:
+  type: json
+  content: "{\r
+
+    \  \"id\" : 1,\r
+
+    \  \"nome\" : \"Unidade Centro\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgyMTM3NjMzLCJleHAiOjE3ODIxNDEyMzMsIm5iZiI6MTc4MjEzNzYzMywianRpIjoid21MOG8yYnNXMTZxb1J1ZyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.QBNeSxGyp6WPINWN_WdQrTqZxDI76ZuiLDwNPTHYSj4
+order: 4503596558555076

@@ -124,7 +124,7 @@ Resultado esperado: 200 OK
 Pagamento aprovado
 Status do pedido alterado para PAGO
 
-CT09 - Bloqueo de pagamento duplicado
+CT09 - Bloqueio de pagamento duplicado
 
 Objetivo: Impedir múltiplos pagamentos no mesmo pedido.
 
@@ -136,3 +136,28 @@ Entrada: POST /api/pedidos/1/pagamento
 
 Resultado esperado: 400 Bad Request
 Pedido já foi pago
+
+CT10 - Produto para unidade invalida.
+
+Entrada: POST /api/produtos
+
+{
+  "nome": "Produto Inválido",
+  "preco": 15.90,
+  "estoque": 20,
+  "unidade_id": 999
+}
+
+Resultado esperado: 500 Internal server error
+{
+    "success": false,
+    "message": "The selected unidade id is invalid."
+}
+
+CT11 - Listar unidades.
+Entrada: GET /api/unidades
+
+{
+  "id" : 1,
+  "nome" : "Unidade Central"
+}

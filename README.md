@@ -10,7 +10,7 @@ O sistema foi projetado utilizando Laravel e PostgreSQL, aplicando conceitos de 
 
 ## Tecnologias Utilizadas
 
-* PHP 8.2
+* PHP
 * Laravel 12
 * PostgreSQL
 * JWT Auth
@@ -69,12 +69,6 @@ O sistema foi projetado utilizando Laravel e PostgreSQL, aplicando conceitos de 
 
 ---
 
-### Controle de Estoque
-
-* Redução automática após criação do pedido
-
----
-
 ## Arquitetura do Sistema
 
 O projeto foi desenvolvido utilizando arquitetura em camadas:
@@ -110,27 +104,6 @@ Banco relacional PostgreSQL com integridade referencial via chaves estrangeiras.
 
 ---
 
-## Estrutura do Banco
-
-Entidades principais:
-
-* users
-* unidades
-* produtos
-* pedidos
-* pedido_items
-* pagamentos
-
-Relacionamentos:
-
-* User 1:N Pedidos
-* Unidade 1:N Produtos
-* Pedido 1:N PedidoItems
-* Produto 1:N PedidoItems
-* Pedido 1:1 Pagamento
-
----
-
 ## Instalação
 
 ### 1. Clonar projeto
@@ -138,7 +111,7 @@ Relacionamentos:
 Com Powershell:
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/HenriqueGriebeler/raizes-backend.git
 ```
 
 ---
@@ -161,7 +134,7 @@ composer install
 
 ### 4. Configurar ambiente
 
-Criar arquivo:
+Criar arquivo .env para conexão com banco de dados postgreSQL que precisa estar devidamente instalado e rodando:
 
 ```bash
 .env
@@ -218,55 +191,11 @@ http://127.0.0.1:8000
 
 ---
 
-## Endpoints Principais
-
 ### Autenticação
 
 POST /api/register
 
 POST /api/login
-
----
-
-### Unidades
-
-GET /api/unidades
-
-POST /api/unidades
-
-PUT /api/unidades/{id}
-
-DELETE /api/unidades/{id}
-
----
-
-### Produtos
-
-GET /api/produtos
-
-POST /api/produtos
-
-PUT /api/produtos/{id}
-
-DELETE /api/produtos/{id}
-
----
-
-### Pedidos
-
-GET /api/pedidos
-
-POST /api/pedidos
-
-GET /api/meus-pedidos
-
----
-
-### Pagamentos
-
-POST /api/pedidos/{id}/pagamento
-
----
 
 ## Regras de Negócio
 
