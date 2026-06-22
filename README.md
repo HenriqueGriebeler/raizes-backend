@@ -151,15 +151,11 @@ DB_USERNAME=postgres
 DB_PASSWORD=123456
 ```
 
----
-
 ### 5. Gerar chave da aplicação
 
 ```bash
 php artisan key:generate
 ```
-
----
 
 ### 6. Gerar chave JWT
 
@@ -167,15 +163,11 @@ php artisan key:generate
 php artisan jwt:secret
 ```
 
----
-
 ### 7. Rodar migrations
 
 ```bash
 php artisan migrate
 ```
-
----
 
 ### 8. Iniciar servidor
 
@@ -188,8 +180,6 @@ Servidor:
 ```text
 http://127.0.0.1:8000
 ```
-
----
 
 ### Autenticação
 
@@ -207,8 +197,6 @@ POST /api/login
 * Um pedido pago não pode ser pago novamente.
 * O sistema registra a origem do pedido através do campo `canal_pedido`.
 
----
-
 ## Segurança
 
 * Autenticação JWT
@@ -218,7 +206,6 @@ POST /api/login
 * Integridade referencial
 * Conformidade básica com LGPD
 
----
 
 ## Testes
 
@@ -241,7 +228,6 @@ Casos cobertos:
 * Pagamento mock
 * Bloqueio de pagamento duplicado
 
----
 
 ## Autor
 
